@@ -15,7 +15,7 @@
     "open-jest-report": "open 'jest-coverage/lcov-report/index.html'",
     "cy-open": "cypress open",
     "cy-test": "cypress run",
-    "cy-test-coverage": "CYPRESS_COVERAGE=true cypress run && npm run cov-report && npm run open-cy-report",
+    "cy-test-coverage": "cross-env CYPRESS_COVERAGE=true cypress run && npm run cov-report && npm run open-cy-report",
     "cov-report": "npx nyc report --reporter text --reporter lcov",
     "open-cy-report": "open 'cypress-coverage/lcov-report/index.html'",
     "precombine-reports": "rm -rf jest-coverage && rm -rf cypress-coverage",
@@ -23,6 +23,7 @@
     "open-report": "open coverage/lcov-report/index.html"
   },
   "dependencies": {
+    "cross-env": "^7.0.2",
     "nuxt": "^2.13.0"
   },
   "devDependencies": {
